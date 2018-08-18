@@ -24,6 +24,7 @@ namespace Web.Controllers
         {
         //qjrwiogheroigheoiwrhgo
             //test1
+          //  throw new Exception(); FOR MERGE
 
             // TEst22
 
