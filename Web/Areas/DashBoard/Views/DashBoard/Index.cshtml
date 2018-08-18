@@ -1,0 +1,459 @@
+﻿@model Web.Areas.DashBoard.Models.DashBoardViewModelDTO
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div >
+    <div class="row" style="padding-top:5px">
+        <div class="col-lg-3 col-md-3   col-sm-6  col-xs-12">
+            <div id="FileEncryptedNewWidget" class="box navbarItemsEmptyClass">
+                <script>
+                    $('#FileEncryptedNewWidget').bind("mouseover", function (e) {
+                        $('#FileEncryptedNewWidget').addClass('box-hover');
+                    });
+
+                    $('#FileEncryptedNewWidget').bind("mouseout", function (e) {
+
+                        $('#FileEncryptedNewWidget').toggleClass('box-hover');
+
+                    });
+
+                    $("#FileEncryptedNewWidget").click(function () {
+                        document.location = '@Url.Action("Index", "FileEncrypt", new { Area = "FileEncrypt" })';
+                    });
+                </script>
+
+
+                <div class="row">
+                    <div style="padding-top: 10px; float: left; padding-left: 24px; padding-bottom: 0px;">
+                        <span style="color: white; font-size: 14px;padding-right:6px">
+                            File Encrypted
+
+
+                        </span>
+                        <i style="color: white; font-size: 14px;" class="fas fa-file-medical-alt"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="padding-top: 5px;">
+                        <span id="totalFileEncrypted" style="color: white; font-size: 25px;">@Model.DashBoardWidgetDetails.TotalFileEncrypted </span>
+                    </div>
+                </div>
+
+                <div style="padding-top: 0px; margin-top: -6px; padding-bottom: 5px;">
+                    <span style="color: white; font-size: 11px;">Files </span>
+                </div>
+
+                <div class="row" style="padding-top: 13px;  background-color: #141c65;padding-bottom:12px">
+                    <span style="color: white; font-size: 13px;">&nbsp;File Uploaded Today :</span>
+                    <span id="fileEncryptedToday" style="color: white; font-size: 13px;">
+                        @Model.DashBoardWidgetDetails.FileEncryptedToday
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3  col-sm-6  col-xs-12">
+            <div id="Widget1" class="box navbarItemsEmptyClass">
+                <script>
+                    $('#Widget1').bind("mouseover", function (e) {
+                        $('#Widget1').addClass('box-hover');
+                    });
+
+                    $('#Widget1').bind("mouseout", function (e) {
+
+                        $('#Widget1').toggleClass('box-hover');
+
+                    });
+
+                    $("#Widget1").click(function () {
+                        document.location = '@Url.Action("Index", "FileEncrypt", new { Area = "FileEncrypt" })';
+                    });
+                </script>
+
+
+
+                <div class="row">
+                    <div style="padding-top: 10px; float: left; padding-left: 24px; padding-bottom: 0px;">
+                        <span style="color: white; font-size: 14px;padding-right:6px">
+                            Services
+
+
+                        </span>
+                        <i style="color: white; font-size: 14px;" class="fas fa-cogs"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="padding-top: 5px;">
+                        <span id="totalFileEncrypted" style="color: white; font-size: 25px;">10 </span>
+                    </div>
+                </div>
+
+                <div style="padding-top: 0px; margin-top: -6px; padding-bottom: 5px;">
+                    <span style="color: white; font-size: 11px;">Scheduled Services </span>
+                </div>
+
+                <div class="row" style="padding-top: 13px; background-color: #141c65;padding-bottom:12px">
+
+
+                    <span style="color: white; font-size: 13px;">&nbsp;Schedules Ran Today :</span>
+
+                    <span id="fileEncryptedToday" style="color: white; font-size: 13px;">
+                      50
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3   col-sm-6  col-xs-12">
+            <div id="ApplicationCacheWidget" class="box navbarItemsEmptyClass">
+                <script>
+                    $('#ApplicationCacheWidget').bind("mouseover", function (e) {
+                        $('#ApplicationCacheWidget').addClass('box-hover');
+                    });
+
+                    $('#ApplicationCacheWidget').bind("mouseout", function (e) {
+
+                        $('#ApplicationCacheWidget').toggleClass('box-hover');
+
+                    });
+
+                    $("#ApplicationCacheWidget").click(function () {
+                        document.location = '@Url.Action("Index", "FileEncrypt", new { Area = "FileEncrypt" })';
+                    });
+                </script>
+
+                <div class="row">
+                    <div style="padding-top: 10px; float: left; padding-left: 24px; padding-bottom: 0px;">
+                        <span style="color: white; font-size: 14px;padding-right:6px">
+                            Applciation Cache
+
+
+                        </span>
+                        <i style="color: white; font-size: 14px;" class="fas fa-microchip"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="padding-top: 5px;">
+                        <span id="applicationCachesTotal" style="color: white; font-size: 25px;">@Model.DashBoardWidgetDetails.ApplicationCachesTotal </span>
+                    </div>
+                </div>
+
+                <div style="padding-top: 0px; margin-top: -6px; padding-bottom: 5px;">
+                    <span style="color: white; font-size: 11px;">Cached </span>
+                </div>
+
+                <div class="row" style="padding-top: 13px; background-color: #141c65;padding-bottom:12px">
+
+                    <span style="color: white; font-size: 13px;">&nbsp;Last Updated :</span>
+                    <span id="applicationCachesLastUpdated" style="color: white; font-size: 13px;">
+                        @Model.DashBoardWidgetDetails.ApplicationCachesLastUpdated
+                    </span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-3   col-sm-6  col-xs-12">
+            <div id="UsersWidget" class="box navbarItemsEmptyClass">
+                <script>
+                    $('#UsersWidget').bind("mouseover", function (e) {
+                        $('#UsersWidget').addClass('box-hover');
+                    });
+
+                    $('#UsersWidget').bind("mouseout", function (e) {
+
+                        $('#UsersWidget').toggleClass('box-hover');
+
+                    });
+
+                    $("#UsersWidget").click(function () {
+                        document.location = '@Url.Action("Index", "User", new { Area = "Management" })';
+                    });
+                </script>
+
+                <div class="row">
+                    <div style="padding-top: 10px; float: left; padding-left: 24px; padding-bottom: 0px;">
+                        <span style="color: white; font-size: 14px;padding-right:6px">
+                            Users
+
+
+                        </span>
+                        <i style="color: white; font-size: 16px;" class="fas fa-users"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="padding-top: 5px;">
+                        <span id="totalUsersWidget" style="color: white; font-size: 25px;">@Model.DashBoardWidgetDetails.TotalNoUsers </span>
+                    </div>
+                </div>
+
+                <div style="padding-top: 0px; margin-top: -6px; padding-bottom: 5px;">
+                    <span style="color: white; font-size: 11px;">Total </span>
+                </div>
+
+                <div class="row" style="padding-top: 0px; background-color: #141c65;padding-bottom:0px">
+                    <span style="color: white; font-size: 13px;">&nbsp;Total Active Users :</span>
+                    <span id="currentUsersWidget" style="color: white; font-size: 13px;">
+                        @Model.DashBoardWidgetDetails.TotalNoActiveUsers
+                    </span>
+                </div>
+
+                <div class="row" style="padding-top: 0px; padding-left: 17px; background-color: #141c65;padding-bottom:8px">
+                    <span style="color: white; font-size: 13px;">Active Sessions :</span>
+                    <span id="currentSessionWidget" style="color: white; font-size: 13px;">
+                        @Model.DashBoardWidgetDetails.TotalNoActiveSessions
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="height:250px; padding-top:10px">
+    <div class="col-lg-5 col-md-5 col-sm-12  col-xs-12" id="myChartDiv">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        Chart.defaults.global.defaultFontFamily = "'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif";
+        Chart.defaults.global.animation.duration = 2000;
+        Chart.defaults.global.animation.easing = 'easeOutCubic';
+        var ctx = document.getElementById("myChart").getContext('2d');
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+
+            data: {
+
+                labels: [@Html.Raw(ViewBag.FileUploadChartLables)],
+                datasets: [{
+                    label: 'Upload Count',
+                    borderColor: 'rgb(54, 162, 235)',
+                    data: [@ViewBag.FileUploadChartData],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                title: {
+                    display: true,
+                    text: 'File Uplaod Daily Statistics'
+                      , fontStyle: 'bold'
+                        , fontSize: 15
+                },
+
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        beginAtZero: true,
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Days'
+                            , fontSize: 14
+
+                        }
+                    }],
+                    yAxes: [{
+
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Uplaod Count'
+                                , fontSize: 14
+                        },
+                        ticks: {
+                            min: 0,
+                            callback: function (value, index, values) {
+                                if (Math.floor(value) === value) {
+                                    return value;
+                                }
+                            }
+                        }
+                    }]
+
+                }
+            }
+        });
+
+        $.connection.dashBoardHub.client.testt = function (test, test1) {
+
+            var flipFileEncryptedNewWidget = KUTE.fromTo('#FileEncryptedNewWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 1000, delay: 100 });
+            flipFileEncryptedNewWidget.start();
+
+            $('#totalFileEncrypted').text(test);
+            $('#fileEncryptedToday').text(test1);
+
+        },
+
+
+        $.connection.dashBoardHub.client.broadCastDashBoardWidget = function (totalFileEncrypted,
+                                                                    fileEncryptedToday,
+                                                                               totalNoUsers,
+                                        totalNoActiveUsers,
+                                        totalNoActiveSessions,
+                                        fileUploadChartLables,
+                                        fileUploadChartData
+                                  , applicationCachesTotal
+                                  ,   applicationCachesLastUpdated
+                                ) {
+
+
+
+            $('#fileEncryptedToday').text("0");
+            $('#totalFileEncrypted').text("0");
+
+
+            //$('#applicationCachesTotal').text("0");
+
+            //$('#totalUsersWidget').text("0");
+            //$('#currentUsersWidget').text("0");
+            //$('#currentSessionWidget').text("0");
+
+            var tween4 = KUTE.fromTo('#FileEncryptedNewWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 1000, delay: 100 });
+            var Widget1Animate = KUTE.fromTo('#Widget1', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
+            var applicationCacheWidgetAnimate = KUTE.fromTo('#ApplicationCacheWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
+            var usersWidgetAnimate = KUTE.fromTo('#UsersWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
+
+
+            var animateTotalFileEncrypted = KUTE.to('#totalFileEncrypted', { number: totalFileEncrypted }, { duration: 3000 }); // this assumes it will start from current number or from 0
+            var animateFileEncryptedToday = KUTE.to('#fileEncryptedToday', { number: fileEncryptedToday }, { duration: 3000 }); // this assumes it will start from current number or from 0
+
+            var animateapplicationCachesTotalWidget0 = KUTE.to('#applicationCachesTotal', { number: 0 }, { duration: 1000, delay: 500 }); // this assumes it will start from current number or from 0
+            var animateapplicationCachesTotalWidget = KUTE.to('#applicationCachesTotal', { number: applicationCachesTotal }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+
+            var animateTotalUsersWidget0 = KUTE.to('#totalUsersWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
+            var animateTotalUsersWidget = KUTE.to('#totalUsersWidget', { number: totalNoUsers }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+
+            var animateCurrentUsersWidget0 = KUTE.to('#currentUsersWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
+            var animateCurrentUsersWidget = KUTE.to('#currentUsersWidget', { number: totalNoActiveUsers }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+
+            var animateCurrentSessionWidget0 = KUTE.to('#currentSessionWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
+            var animateCurrentSessionWidget = KUTE.to('#currentSessionWidget', { number: totalNoActiveSessions }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+
+
+            //tween4.start();
+            //usersWidgetAnimate.start();
+            //applicationCacheWidgetAnimate.start();
+            //Widget1Animate.start();
+
+            animateTotalFileEncrypted.start();
+            animateFileEncryptedToday.start();
+
+            tween4.chain(Widget1Animate);
+            Widget1Animate.chain(applicationCacheWidgetAnimate);
+            applicationCacheWidgetAnimate.chain(usersWidgetAnimate);
+            tween4.start();
+
+
+
+            animateapplicationCachesTotalWidget0.chain(animateapplicationCachesTotalWidget);
+            animateapplicationCachesTotalWidget0.start();
+
+            animateTotalUsersWidget0.chain(animateTotalUsersWidget);
+            animateTotalUsersWidget0.start();
+
+            animateCurrentUsersWidget0.chain(animateCurrentUsersWidget);
+            animateCurrentUsersWidget0.start();
+
+            animateCurrentSessionWidget0.chain(animateCurrentSessionWidget);
+            animateCurrentSessionWidget0.start();
+
+            var data = fileUploadChartData.split(',');
+
+            var ctx = document.getElementById("myChart").getContext('2d');
+
+            Chart.defaults.global.defaultFontFamily = "'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif";
+            Chart.defaults.global.animation.duration = 2000;
+            Chart.defaults.global.animation.easing = 'easeOutCubic';
+
+
+            var myChart = new Chart(ctx, {
+                type: 'line',
+
+                data: {
+
+                    labels: [@Html.Raw(ViewBag.FileUploadChartLables)],
+                    datasets: [{
+                        label: 'Upload Count',
+                        borderColor: 'rgb(54, 162, 235)',
+                        data: data,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: 'File Uplaod Daily Statistics'
+                       , fontStyle: 'bold'
+                        , fontSize: 14
+                    },
+
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            beginAtZero: true,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Days'
+                                   , fontSize: 14
+                            }
+                        }],
+                        yAxes: [{
+
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Uplaod Count'
+                                       , fontSize: 14
+                            },
+                            ticks: {
+                                min: 0,
+                                callback: function (value, index, values) {
+                                    if (Math.floor(value) === value) {
+                                        return value;
+                                    }
+                                }
+                            }
+                        }]
+
+                    }
+                }
+            });
+
+        };
+
+    });
+</script>

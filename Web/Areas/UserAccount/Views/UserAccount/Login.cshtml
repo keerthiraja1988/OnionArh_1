@@ -1,0 +1,68 @@
+﻿@model Web.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Login", "UserAccount", new { area = "UserAccount", ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "UserLoginFormId" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RememberMe)
+                    @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+                <button id="btnUserLogin" type="button" name="button" class="hvr-icon-forward btn btn-primary hvr-forward">
+                    Log In <i class="fa fa-chevron-circle-right hvr-icon"></i>
+                </button>
+
+                @*<input type="submit" value="Log In" class="hvr-icon-forward btn btn-primary hvr-forward" >*@
+
+            </div>
+        </div>
+    </div>
+}
+
+
+<script>
+
+    $("#btnUserLogin").click(function () {
+
+        var password = $('#password').val();
+        var passwordMD5 = btoa(password);
+   
+        $('#password').val(passwordMD5);
+        $("#UserLoginFormId").submit();
+
+    });
+
+</script>
