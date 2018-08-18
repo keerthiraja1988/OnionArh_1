@@ -1,0 +1,53 @@
+﻿
+
+@{
+
+    ViewBag.Title = "Error";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div style="background-color:white" class="container-fluid paddingLeft40px">
+
+    <img src="https://a0.muscache.com/airbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif" width="300" height="400" alt="Girl has dropped her ice cream.">
+
+
+
+    <h1 id="oopsText" hidden="hidden" class="text-jumbo text-ginormous">Oops!</h1>
+
+    <h2 id="errorText" hidden="hidden">An error occurred while processing your request.</h2>
+
+    <h6 id="errorMessage" hidden="hidden" class="text-danger" style="font-weight:bold">@ViewBag.ErrorMessage</h6>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+
+        setTimeout(function () {
+
+            $("#oopsText").show("slow");
+
+            $("#errorText").show("slow");
+
+        }, 2000);
+
+        setTimeout(function () {
+
+
+            $("#errorMessage").show("slow");
+
+        }, 3000);
+
+
+
+    });
+
+
+
+</script>

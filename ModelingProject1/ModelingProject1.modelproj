@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d01a878e-2a39-466a-a3e4-e3999f114d2c}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingProject1</Name>
+    <RootNamespace>ModelingProject1</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\ModelingProject1.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="ApplicationLayerDiagram.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="ApplicationLayerDiagram.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ApplicationLayerDiagram.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="ApplicationLayerDiagram.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>ApplicationLayerDiagram.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel\DomainModel.csproj">
+      <Name>DomainModel</Name>
+      <Project>{bfcf8967-cee4-47ae-89b3-f435ae05ae09}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\CrossCutting\CrossCutting.csproj">
+      <Name>CrossCutting</Name>
+      <Project>{fdd792b0-95f3-4155-a99c-6a83b5176f4b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\DependencyInjecionResolver\DependencyInjecionResolver.csproj">
+      <Name>DependencyInjecionResolver</Name>
+      <Project>{a0b6f618-c54e-4286-9c1c-8890cf7af738}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchestrator\OrchestratorConcrete\OrchestratorConcrete.csproj">
+      <Name>OrchestratorConcrete</Name>
+      <Project>{986397c2-af50-4702-bf76-2082f9f95e6f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchestrator\OrchestratorInterface\OrchestratorInterface.csproj">
+      <Name>OrchestratorInterface</Name>
+      <Project>{4e03dbbb-5a82-4c9b-890f-e98807f1b182}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository\Repository.csproj">
+      <Name>Repository</Name>
+      <Project>{afc42d8a-1efb-4a35-99a4-80a2aaa96eeb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\ServiceConcrete\ServiceConcrete.csproj">
+      <Name>ServiceConcrete</Name>
+      <Project>{f16a70b4-908a-49c5-846f-ab8502cc1b24}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\ServiceInterface\ServiceInterface.csproj">
+      <Name>ServiceInterface</Name>
+      <Project>{f4372a31-b768-4637-ac1f-d48671bbbed0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\Web.csproj">
+      <Name>Web</Name>
+      <Project>{932b04a4-370a-42db-9edb-4e66e645efa2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowService\WindowService.csproj">
+      <Name>WindowService</Name>
+      <Project>{0a9b84bc-3cbc-4b9b-8abd-4a6cf13e5a65}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

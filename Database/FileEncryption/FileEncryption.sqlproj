@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>FileEncryption</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ec14d4e3-f7ed-4de1-849c-8396bdcb53d6}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>FileEncryption</RootNamespace>
+    <AssemblyName>FileEncryption</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SuppressTSqlWarnings>80001</SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Snapshots" />
+    <Folder Include="HangFire\" />
+    <Folder Include="HangFire\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ELMAH_Error.sql" />
+    <Build Include="dbo\Tables\FileEncryptionDetails.sql" />
+    <Build Include="dbo\Tables\LOG4NET.sql" />
+    <Build Include="dbo\Tables\ApplicationCacheConfig.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_GetErrorsXml.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_GetErrorXml.sql" />
+    <Build Include="dbo\Stored Procedures\ELMAH_LogError.sql" />
+    <Build Include="dbo\Stored Procedures\GetEncryptedFileDetail.sql" />
+    <Build Include="dbo\Stored Procedures\GetEncryptedFileDetails.sql" />
+    <Build Include="dbo\Stored Procedures\SaveFileEncryptionDetails.sql" />
+    <Build Include="dbo\Stored Procedures\ValidateUserLoginDetails.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllUserAccountDetails.sql" />
+    <Build Include="dbo\Stored Procedures\P_SQLDebugLogger.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\UserRoles.sql" />
+    <Build Include="dbo\Tables\SQLLogs.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\Notification.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateApplicationCacheValue.sql" />
+    <Build Include="dbo\Stored Procedures\SaveNotification.sql" />
+    <Build Include="dbo\Stored Procedures\P_RegisterNewUser.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetUserRoleDetailsForLogin.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetUserDetailsForLogin.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetAllUserRoleDetails.sql" />
+    <Build Include="dbo\Stored Procedures\P_AddNewUser.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetAllRoleDetails.sql" />
+    <Build Include="HangFire\Tables\List.sql" />
+    <Build Include="HangFire\Tables\Server.sql" />
+    <Build Include="HangFire\Tables\JobQueue.sql" />
+    <Build Include="HangFire\Tables\JobParameter.sql" />
+    <Build Include="HangFire\Tables\State.sql" />
+    <Build Include="HangFire\Tables\Job.sql" />
+    <Build Include="HangFire\Tables\Schema.sql" />
+    <Build Include="HangFire\Tables\AggregatedCounter.sql" />
+    <Build Include="HangFire\Tables\Hash.sql" />
+    <Build Include="HangFire\Tables\Counter.sql" />
+    <Build Include="HangFire\Tables\Set.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetFileEncryptionDetailsForDashBoard.sql" />
+    <Build Include="dbo\Stored Procedures\P_DashBoardWidgetDetails.sql" />
+    <Build Include="Security\HangFire.sql" />
+    <Build Include="dbo\Stored Procedures\P_UpdateUserDetailsForUserId.sql" />
+    <Build Include="dbo\Stored Procedures\P_GetUserRoleDetailsForUserId.sql" />
+    <Build Include="dbo\Stored Procedures\P_DashBoardGetFileEncryptionChart.sql" />
+    <Build Include="Security\test.sql" />
+    <Build Include="Security\NT AUTHORITY_SYSTEM.sql" />
+    <Build Include="Security\NewAdminName.sql" />
+    <Build Include="Security\FileEncrypt.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+  </ItemGroup>
+</Project>
