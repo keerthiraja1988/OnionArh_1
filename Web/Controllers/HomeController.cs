@@ -22,12 +22,8 @@ namespace Web.Controllers
       
         public ActionResult Index()
         {
-<<<<<<< HEAD
-          //  throw new Exception(); hfhwdhfwoehfo wefweeeeeeeeeeeeeeeeeeeeeeee jjiiiii
-=======
-          //  throw new Exception(); hfhwdhfwoehfo wefweeeeeeeeeeeeeeeeeeeeeeee dsdgsdgdf
->>>>>>> 7cf25b898c45b89c36e06457096e53025ecdb11f
 
+            //  throw new Exception(); hfhwdhfwoehfo wefweeeeeeeeeeeeeeeeeeeeeeee dsdgsdgdf
             var v = this._IFileEncryptionOrchestrator.GetValueFromOnion();
             return View();
         }
