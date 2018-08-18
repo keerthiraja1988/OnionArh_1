@@ -374,10 +374,6 @@
       <Link>ApplicationLayerDiagram.layerdiagram</Link>
       <Visible>False</Visible>
     </AdditionalFiles>
-    <AdditionalFiles Include="..\ModelingProject1\DependencyValidation1.layerdiagram">
-      <Link>DependencyValidation1.layerdiagram</Link>
-      <Visible>False</Visible>
-    </AdditionalFiles>
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>

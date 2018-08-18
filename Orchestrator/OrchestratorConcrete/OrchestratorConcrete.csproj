@@ -77,10 +77,6 @@
       <Link>ApplicationLayerDiagram.layerdiagram</Link>
       <Visible>False</Visible>
     </AdditionalFiles>
-    <AdditionalFiles Include="..\..\ModelingProject1\DependencyValidation1.layerdiagram">
-      <Link>DependencyValidation1.layerdiagram</Link>
-      <Visible>False</Visible>
-    </AdditionalFiles>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
