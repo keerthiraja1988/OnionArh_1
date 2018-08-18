@@ -1,1 +1,33 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f51facbf-3dec-457f-8232-7f4beae0ac31" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="847953ad-cbfb-43cb-a2c8-8f52d3f57294" name="Web">
+      <references>
+        <reference Id="28727d34-5c84-4e2b-8deb-5f23af99cfb7" name="Web">
+          <ArtifactNode Label="Web" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/GitHub/OnionArh_1/Web/Web.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Web)" Label="Web.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="8f2036e9-b3e0-4fb0-8ffb-d941b0b7c84d" name="ControllerTest">
+      <references>
+        <reference Id="8d03449d-333b-4065-ac3d-378bd8b61350" name="ControllerTest">
+          <ArtifactNode Label="ControllerTest" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/GitHub/OnionArh_1/Test/ControllerTest/ControllerTest.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ControllerTest)" Label="ControllerTest.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>
