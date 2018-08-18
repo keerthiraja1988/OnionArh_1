@@ -55,19 +55,19 @@
         </div>
 
         <div class="col-lg-3 col-md-3  col-sm-6  col-xs-12">
-            <div id="Widget1" class="box navbarItemsEmptyClass">
+            <div id="ServerCountWidget" class="box navbarItemsEmptyClass">
                 <script>
-                    $('#Widget1').bind("mouseover", function (e) {
-                        $('#Widget1').addClass('box-hover');
+                    $('#ServerCountWidget').bind("mouseover", function (e) {
+                        $('#ServerCountWidget').addClass('box-hover');
                     });
 
-                    $('#Widget1').bind("mouseout", function (e) {
+                    $('#ServerCountWidget').bind("mouseout", function (e) {
 
-                        $('#Widget1').toggleClass('box-hover');
+                        $('#ServerCountWidget').toggleClass('box-hover');
 
                     });
 
-                    $("#Widget1").click(function () {
+                    $("#ServerCountWidget").click(function () {
                         document.location = '@Url.Action("Index", "FileEncrypt", new { Area = "FileEncrypt" })';
                     });
                 </script>
@@ -77,33 +77,37 @@
                 <div class="row">
                     <div style="padding-top: 10px; float: left; padding-left: 24px; padding-bottom: 0px;">
                         <span style="color: white; font-size: 14px;padding-right:6px">
-                            Services
+                            Server Status
 
 
                         </span>
-                        <i style="color: white; font-size: 14px;" class="fas fa-cogs"></i>
+                        <i style="color: white; font-size: 14px;" class="fas fa-server"></i>
                     </div>
                 </div>
 
                 <div class="row">
                     <div style="padding-top: 5px;">
-                        <span id="totalFileEncrypted" style="color: white; font-size: 25px;">10 </span>
+                        <span id="totalFileEncrypted" style="color: white; font-size: 25px;"> @Model.DashBoardWidgetDetails.NoOfServersUp </span>
                     </div>
                 </div>
 
                 <div style="padding-top: 0px; margin-top: -6px; padding-bottom: 5px;">
-                    <span style="color: white; font-size: 11px;">Scheduled Services </span>
+                    <span style="color: white; font-size: 11px;"> Servers Up </span>
                 </div>
-
-                <div class="row" style="padding-top: 13px; background-color: #141c65;padding-bottom:12px">
-
-
-                    <span style="color: white; font-size: 13px;">&nbsp;Schedules Ran Today :</span>
-
-                    <span id="fileEncryptedToday" style="color: white; font-size: 13px;">
-                      50
+                <div class="row" style="padding-top: 0px; background-color: #141c65;padding-bottom:0px">
+                    <span style="color: white; font-size: 13px;">&nbsp;Servers Down :</span>
+                    <span id="currentUsersWidget" style="color: white; font-size: 13px;">
+                        @Model.DashBoardWidgetDetails.NoOfServersDown
                     </span>
                 </div>
+
+                <div class="row" style="padding-top: 0px; padding-left: 17px; background-color: #141c65;padding-bottom:8px">
+                    <span style="color: white; font-size: 13px;">Status Checked &nbsp;</span>
+                    <span id="currentSessionWidget" style="color: white; font-size: 13px;">
+                       5 Min Ago
+                    </span>
+                </div>
+
             </div>
         </div>
 
