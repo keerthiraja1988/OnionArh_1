@@ -37,7 +37,7 @@ namespace Web.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page. Committgt";
+            ViewBag.Message = "Your contact page. Commit";
 
             return View();
         }
