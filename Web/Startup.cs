@@ -27,7 +27,7 @@ namespace Web
             // STANDARD SIGNALR SETUP:
 
             // Get your HubConfiguration. In OWIN, you'll create one
-            // rather than using GlobalHost.
+            // rather than using GlobalHost. ////
             var config = new HubConfiguration();
 
             // Register your SignalR hubs.
