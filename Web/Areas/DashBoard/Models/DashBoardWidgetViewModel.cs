@@ -24,6 +24,7 @@ namespace Web.Areas.DashBoard.Models
         public Int64 NoOfServersUp { get; set; }
         public Int64 NoOfServersDown { get; set; }
         public DateTime StatusRanOn { get; set; }
+        public string StatusRanOnText { get; set; }
     }
 
 

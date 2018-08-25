@@ -31,7 +31,7 @@ namespace ServerAvailabilityChecker
                 .StartNow()
                 .WithDailyTimeIntervalSchedule
                 (s =>
-                    s.WithIntervalInSeconds(40).OnEveryDay()
+                    s.WithIntervalInMinutes(5).OnEveryDay()
                 )
                 .Build();
 

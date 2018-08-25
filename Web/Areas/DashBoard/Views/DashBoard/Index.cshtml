@@ -87,7 +87,7 @@
 
                 <div class="row">
                     <div style="padding-top: 5px;">
-                        <span id="totalFileEncrypted" style="color: white; font-size: 25px;"> @Model.DashBoardWidgetDetails.NoOfServersUp </span>
+                        <span id="noOfServersUp" style="color: white; font-size: 25px;"> @Model.DashBoardWidgetDetails.NoOfServersUp </span>
                     </div>
                 </div>
 
@@ -102,9 +102,9 @@
                 </div>
 
                 <div class="row" style="padding-top: 0px; padding-left: 17px; background-color: #141c65;padding-bottom:8px">
-                    <span style="color: white; font-size: 13px;">Status Checked &nbsp;</span>
+                    <span style="color: white; font-size: 13px;"> Checked </span>
                     <span id="currentSessionWidget" style="color: white; font-size: 13px;">
-                       5 Min Ago
+                        @Model.DashBoardWidgetDetails.StatusRanOnText
                     </span>
                 </div>
 
@@ -311,8 +311,11 @@
 
 
         $.connection.dashBoardHub.client.broadCastDashBoardWidget = function (totalFileEncrypted,
-                                                                    fileEncryptedToday,
-                                                                               totalNoUsers,
+                                                                         fileEncryptedToday
+                                                                       , noOfServersUp
+                                                                      ,  noOfServersDown
+                                                                        ,      statusRanOn                                                     
+                                                                           ,    totalNoUsers,
                                         totalNoActiveUsers,
                                         totalNoActiveSessions,
                                         fileUploadChartLables,
@@ -332,9 +335,11 @@
             //$('#totalUsersWidget').text("0");
             //$('#currentUsersWidget').text("0");
             //$('#currentSessionWidget').text("0");
+           
+            //alert(statusRanOn);
 
             var tween4 = KUTE.fromTo('#FileEncryptedNewWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 1000, delay: 100 });
-            var Widget1Animate = KUTE.fromTo('#Widget1', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
+            var Widget1Animate = KUTE.fromTo('#ServerCountWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
             var applicationCacheWidgetAnimate = KUTE.fromTo('#ApplicationCacheWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
             var usersWidgetAnimate = KUTE.fromTo('#UsersWidget', { rotateX: 180 }, { rotateX: 0 }, { perspective: 600, duration: 500 });
 
@@ -349,11 +354,12 @@
             var animateTotalUsersWidget = KUTE.to('#totalUsersWidget', { number: totalNoUsers }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
 
             var animateCurrentUsersWidget0 = KUTE.to('#currentUsersWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
-            var animateCurrentUsersWidget = KUTE.to('#currentUsersWidget', { number: totalNoActiveUsers }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+            var animateCurrentUsersWidget = KUTE.to('#currentUsersWidget', { number: noOfServersDown }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
 
-            var animateCurrentSessionWidget0 = KUTE.to('#currentSessionWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
-            var animateCurrentSessionWidget = KUTE.to('#currentSessionWidget', { number: totalNoActiveSessions }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
-
+            $('#currentSessionWidget').text(statusRanOn);
+            //var animateCurrentSessionWidget0 = KUTE.to('#currentSessionWidget', { number: 0 }, { duration: 1000, delay: 800 }); // this assumes it will start from current number or from 0
+            //var animateCurrentSessionWidget = KUTE.to('#currentSessionWidget', { number: statusRanOn }, { duration: 1500, delay: 0 }); // this assumes it will start from current number or from 0
+           
 
             //tween4.start();
             //usersWidgetAnimate.start();
@@ -379,8 +385,10 @@
             animateCurrentUsersWidget0.chain(animateCurrentUsersWidget);
             animateCurrentUsersWidget0.start();
 
-            animateCurrentSessionWidget0.chain(animateCurrentSessionWidget);
-            animateCurrentSessionWidget0.start();
+            //animateCurrentSessionWidget0.chain(animateCurrentSessionWidget);
+            //animateCurrentSessionWidget0.start();
+
+         
 
             var data = fileUploadChartData.split(',');
 
