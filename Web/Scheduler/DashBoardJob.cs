@@ -12,6 +12,7 @@ using static Web.Hub.NotificationHub;
 using DomainModel.Admin;
 using System.Linq;
 using Web.Areas.DashBoard.Models;
+using CrossCutting.SharedMethods;
 
 namespace Web.Scheduler
 {
@@ -55,6 +56,13 @@ namespace Web.Scheduler
 
             context1.Clients.All.broadCastDashBoardWidget(dashBoardViewModelDTO.DashBoardWidgetDetails.TotalFileEncrypted,
                                                         dashBoardViewModelDTO.DashBoardWidgetDetails.FileEncryptedToday,
+
+                                                           dashBoardViewModelDTO.DashBoardWidgetDetails.NoOfServersUp,
+                                                           dashBoardViewModelDTO.DashBoardWidgetDetails.NoOfServersDown,
+                                                           TimeAgo.GetTimeAgo(
+                                                               dashBoardViewModelDTO.DashBoardWidgetDetails.StatusRanOn
+                                                               ),
+                                                           
                                                            dashBoardViewModelDTO.DashBoardWidgetDetails.TotalNoUsers,
                                                             dashBoardViewModelDTO.DashBoardWidgetDetails.TotalNoActiveUsers,
                                                             dashBoardViewModelDTO.DashBoardWidgetDetails.TotalNoActiveSessions,

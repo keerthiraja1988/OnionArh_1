@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CrossCutting.Caching;
+using CrossCutting.SharedMethods;
 using DomainModel.DashBoard;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Infrastructure;
@@ -44,6 +45,9 @@ namespace Web.Areas.DashBoard.Controllers
             dashBoardWidgetDTO = this._IDashBoardOrchestrator.GetDashBoardWidgetDetails();
 
             Mapper.Map(dashBoardWidgetDTO, dashBoardViewModelDTO);
+            dashBoardViewModelDTO.DashBoardWidgetDetails.StatusRanOnText = TimeAgo.GetTimeAgo(
+                                                               dashBoardViewModelDTO.DashBoardWidgetDetails.StatusRanOn
+                                                               );
 
             dashBoardViewModelDTO.DashBoardWidgetDetails.TotalNoUsers = GlobalCachingProvider.Instance.GetAllUsersAccountsFromCache().Count;
             dashBoardViewModelDTO.DashBoardWidgetDetails.TotalNoActiveUsers = ActiveConnections.ActiveUsers.Where(x => x != "").ToList().Distinct().ToList().Count;

@@ -49,6 +49,7 @@
     <Compile Include="DatabaseModel.cs" />
     <Compile Include="FileEncryption\FileEncryption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerStatus\ServerDetailModel.cs" />
     <Compile Include="UserManagement\UserAccountModel.cs" />
   </ItemGroup>
   <ItemGroup>
